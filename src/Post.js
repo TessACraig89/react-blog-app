@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import './Post.css';
+import Comment from './Comment.js'
+
 
 class Post extends Component {
   render() {
     return (
-      <div className="Post">
-        <h1>The title of this book is {this.props.title}</h1>
-        <h2>The author of this book is {this.props.author}</h2>
-        <p>The body of this book is {this.props.body}<br></br>and the comments are {this.props.comments}</p>
+      <div>
+        <h1>{this.props.title}</h1>
+        <p>By {this.props.author}</p>
+        <div>
+          <p>{this.props.body}</p>
+        </div>
+        <h3>Comments:</h3>
+        {this.props.comments.map((comment) => {
+            return <Comment body={comment} />
+          })}
+        {/* <Comment body={this.props.comments.body} /> */}
       </div>
     );
   }
