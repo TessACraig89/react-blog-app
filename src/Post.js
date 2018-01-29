@@ -5,6 +5,19 @@ import Comment from './Comment.js'
 
 
 class Post extends Component {
+  // when our component is initialized,
+  // our constructor function is called
+  constructor (props) {
+    // make call to parent class' (Component) constructor
+    super()
+    // define an initial state
+    this.state = {
+      title: "My initial blog title",
+      author: "My initial blog author",
+      body: "My initial blog post body",
+      comments: ["My first comments at first", "My second comment at first", "My third comment at first"]
+    }
+  }
   render() {
     return (
       <div>
