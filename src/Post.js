@@ -14,10 +14,11 @@ class Post extends Component {
           <p>{this.props.body}</p>
         </div>
         <h3>Comments:</h3>
+        {/* use map to loop through comments array and for each comment run function that  */}
+            {/* returns Comment body (from Comment.js) with value of comment (from index.js)  */}
         {this.props.comments.map((comment) => {
             return <Comment body={comment} />
           })}
-        {/* <Comment body={this.props.comments.body} /> */}
       </div>
     );
   }
