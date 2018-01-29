@@ -38,6 +38,7 @@ class Post extends Component {
               return <Comment body={comment} />
             })}
           </article>
+          {/* button  */}
           <button onClick={(e) => this.editBlogPost(e)}>Update Post?</button>
         </div>
     );
