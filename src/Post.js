@@ -19,6 +19,8 @@ class Post extends Component {
     }
   }
   editBlogPost (e) {
+    // setState() to tell React that this component and its children need to be re-rendered with the updated state.
+      // using prompt, display dialog box asking for user input to body thats text is "update blog post" and default text is this.state.body
     this.setState({
       body: prompt("update blog post", this.state.body)
     })
@@ -31,6 +33,7 @@ class Post extends Component {
           <p>By {this.props.author}</p>
         </header>
         <article className="Post-body">
+          <p>{this.state.body}</p>
           <h3>Comments:</h3>
           {/* use map to loop through comments array and for each comment run function that  */}
               {/* returns Comment body (from Comment.js) with value of comment (from index.js)  */}
@@ -38,7 +41,7 @@ class Post extends Component {
               return <Comment body={comment} />
             })}
           </article>
-          {/* button  */}
+          {/* create edit method that updates body based on user input */}
           <button onClick={(e) => this.editBlogPost(e)}>Update Post?</button>
         </div>
     );
